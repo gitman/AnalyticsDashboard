@@ -20,3 +20,7 @@ end
 Role.blueprint do
   # Attributes here
 end
+
+InternetDataUsage.blueprint do
+  # Attributes here
+end

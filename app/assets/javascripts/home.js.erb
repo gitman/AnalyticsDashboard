@@ -1,0 +1,34 @@
+$(function () {
+    new Highcharts.Chart({
+      chart: {
+          type: 'column',
+          renderTo: 'internet_data_usage_charts' 
+        },
+        title: {
+            text: 'Internet Data Usage'
+        },
+        xAxis: {
+          title: {
+                text: 'Date'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Time'
+            }
+        },
+        tooltip: {
+          pointFormat: "Value: {point.y:.2f} mm"
+        },
+        legend: {
+          enabled: false
+        },
+        series: [{
+          name: 'Date Time',
+          allowPointSelect: true,
+          // pointInterval: <%= 1.day * 1000 %>,
+          // pointStart: DateTime.UTC(<%= InternetDataUsage.usage_data[:date_n_time][0] %>),
+          data:  <%= InternetDataUsage.usage_data[:data] %>
+        }]
+    });
+  });
