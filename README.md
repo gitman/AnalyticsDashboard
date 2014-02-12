@@ -1,3 +1,48 @@
+Setup
+========================
+
+I
+========================
+
+Include:
+config/application.yml
+with 
+
+```ruby
+GMAIL_USERNAME: ENV["GMAIL_USERNAME"]
+GMAIL_PASSWORD: ENV["GMAIL_PASSWORD"]
+ADMIN_NAME: admin
+ADMIN_EMAIL: user@example.com
+ADMIN_PASSWORD: changeme
+ROLES: [admin, user, VIP]
+```
+
+config/database.yml
+with
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: AnalyticsDashboard_development
+  pool:     5
+  username: postgres_username
+  password: 
+
+
+II
+========================
+
+Run on commandline or terminal or iTerm
+
+rake db:drop  db:create db:migrate db:seed && rails s
+
+III
+========================
+
+Runing Test
+
+rake
+
 Analyticsdashboard
 ========================
 
@@ -24,7 +69,6 @@ Analyticsdashboard
 * ban_spiders: true
 * github: true
 
-===============================================================================
 
   Be sure to have a copy of the Bootstrap stylesheet available on your
   application, you can get it on http://twitter.github.com/bootstrap.
@@ -35,9 +79,7 @@ Analyticsdashboard
 
     = simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|
 
-===============================================================================
 
-===============================================================================
 
 Some setup you must do manually if you haven't yet:
 
@@ -71,9 +113,7 @@ Some setup you must do manually if you haven't yet:
 
        rails g devise:views
 
-===============================================================================
 
-===============================================================================
 
 An initializer file has been created here: config/initializers/rolify.rb, you
 can change rolify settings to match your needs.
@@ -85,3 +125,11 @@ inside.
 
 Inside your User class (or the name you gave as argument otherwise the default
 is user.rb), rolify method has been inserted to provide rolify methods.
+
+
+ROLES
+role: admin
+role: user
+role: VIP
+DEFAULT USERS
+user: First User
