@@ -9,12 +9,12 @@ require 'machinist/active_record'
 #   end
 
 User.blueprint do
-  name                  {'Test User'}
-  email                 {"example-#{sn}@example.com"}
-  password              {'changeme'}
-  password_confirmation {'changeme'}
+  name                  { 'Test User' }
+  email                 { "example-#{sn}@example.com" }
+  password              { 'changeme' }
+  password_confirmation { 'changeme' }
   # required if the Devise Confirmable module is used
-  confirmed_at          {Time.now}
+  confirmed_at          { Time.now }
 end
 
 Role.blueprint do
@@ -22,5 +22,6 @@ Role.blueprint do
 end
 
 InternetDataUsage.blueprint do
-  # Attributes here
+  date_n_time           { Time.now }
+  data                  { 20.1 }
 end

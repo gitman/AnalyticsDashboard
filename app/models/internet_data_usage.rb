@@ -1,5 +1,7 @@
 class InternetDataUsage < ActiveRecord::Base
 
+  validates :date_n_time, presence: true
+  validates :data,        presence: true
   validates :date_n_time, uniqueness: true
 
   def self.import(file)
