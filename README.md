@@ -19,6 +19,7 @@ ROLES: [admin, user, VIP]
 
 config/database.yml
 with
+```ruby
 development:
   adapter:  postgresql
   host:     localhost
@@ -27,21 +28,26 @@ development:
   pool:     5
   username: postgres_username
   password: 
-
+```
 
 II
 ========================
 
 Run on commandline or terminal or iTerm
 
+```ruby
 rake db:drop  db:create db:migrate db:seed && rails s
+```
+
 
 III
 ========================
 
 Runing Test
 
+```ruby
 rake
+```
 
 Analyticsdashboard
 ========================
