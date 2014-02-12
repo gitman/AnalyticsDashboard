@@ -75,3 +75,9 @@ $(function () {
         }]
     });
   });
+
+$(function () {
+    $(".droppable>div").sortable({
+        connectWith: ".connectedSortable>div"
+    }).disableSelection();
+});

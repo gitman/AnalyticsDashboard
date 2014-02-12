@@ -7,3 +7,53 @@
   width: 560px;
   height: 300px;
 }
+
+.droppable {
+  float: left;
+  margin:10px;
+  padding: 10px;
+  width: 560px;
+  height:300px;
+  vertical-align: middle;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color:#EEEEEE;
+  -webkit-box-shadow: #B3B3B3 2px 2px 2px;
+  -moz-box-shadow: #B3B3B3 2px 2px 2px;
+  box-shadow: #B3B3B3 2px 2px 2px;
+}
+.droppable a {
+  line-height:32px;
+  text-decoration: none;
+  color: #000;
+}
+.droppable a img {
+  margin-left: 10px;
+}
+.draggable {
+  width: 560px;
+  height:300px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color:#DFE8F1;
+  -webkit-box-shadow: #B3B3B3 5px 5px 5px;
+  -moz-box-shadow: #B3B3B3 5px 5px 5px;
+  box-shadow: #B3B3B3 5px 5px 5px;
+  margin-bottom:12px;
+  min-height:32px;
+  padding:3px;
+  text-align:center;
+  width:95%;
+  display: inline-block;
+  display: block;
+}
+.draggable p {
+  padding: 5px;
+  width: 100%;
+}
+
+.task-wrapper{
+  min-height: 20px;
+}
