@@ -2,20 +2,27 @@ $(function () {
     new Highcharts.Chart({
       chart: {
           type: 'column',
-          renderTo: 'internet_data_usage_charts' 
+          renderTo: 'total_monthly_usage' 
         },
         title: {
-            text: 'Internet Data Usage'
+            text: 'Internet Data: Total Monthly Usage'
         },
         xAxis: {
-          title: {
-                text: 'Date'
+         categories: <%= InternetDataUsage.total_monthly_usage[:dates] %>,
+         labels: {
+            rotation: -45,
+            align: 'right',
+            style: {
+              fontSize: '10px',
+              fontFamily: 'Verdana, sans-serif'
             }
+          }
         },
         yAxis: {
-            title: {
-                text: 'Time'
-            }
+          min: 0,
+          title: {
+              text: 'Usage (MB)'
+          }
         },
         tooltip: {
           pointFormat: "Value: {point.y:.2f} mm"
@@ -25,10 +32,46 @@ $(function () {
         },
         series: [{
           name: 'Date Time',
-          allowPointSelect: true,
-          // pointInterval: <%= 1.day * 1000 %>,
-          // pointStart: DateTime.UTC(<%= InternetDataUsage.usage_data[:date_n_time][0] %>),
-          data:  <%= InternetDataUsage.usage_data[:data] %>
+          data:  <%= InternetDataUsage.total_monthly_usage[:usages] %>
+        }]
+    });
+  });
+
+$(function () {
+    new Highcharts.Chart({
+      chart: {
+          type: 'column',
+          renderTo: 'total_monthly_usage_costs' 
+        },
+        title: {
+            text: 'Internet Data: Total Monthly Usage Cost'
+        },
+        xAxis: {
+         categories: <%= InternetDataUsage.data_usage_cost_per_month(0.1)[:dates] %>,
+         labels: {
+            rotation: -45,
+            align: 'right',
+            style: {
+              fontSize: '10px',
+              fontFamily: 'Verdana, sans-serif'
+            }
+          }
+        },
+        yAxis: {
+          min: 0,
+          title: {
+              text: 'Usage (MB)'
+          }
+        },
+        tooltip: {
+          pointFormat: "Value: {point.y:.2f} mm"
+        },
+        legend: {
+          enabled: false
+        },
+        series: [{
+          name: 'Date Time',
+          data:  <%= InternetDataUsage.data_usage_cost_per_month(0.1)[:costs] %>
         }]
     });
   });

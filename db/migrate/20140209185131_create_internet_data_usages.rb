@@ -6,5 +6,7 @@ class CreateInternetDataUsages < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :internet_data_usages, :date_n_time, :unique => true
   end
 end
